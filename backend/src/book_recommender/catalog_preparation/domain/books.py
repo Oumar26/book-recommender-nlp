@@ -43,9 +43,14 @@ class CatalogBook:
     cover_url: str | None
     rating: float | None
     num_ratings: int
-    # Colonnes NLP (zero-shot, KeyBERT), remplies par l'étape d'enrichissement sur GPU.
+    # Colonnes NLP (zero-shot, KeyBERT), remplies par EnrichCatalog (GPU).
+    # *_scores : probabilité NLI de chaque étiquette, dans l'ordre d'options.json.
     themes: tuple[str, ...] = field(default=())
+    theme_scores: tuple[float, ...] = field(default=())
     atmospheres: tuple[str, ...] = field(default=())
+    atmosphere_scores: tuple[float, ...] = field(default=())
     narrative_styles: tuple[str, ...] = field(default=())
+    narrative_style_scores: tuple[float, ...] = field(default=())
     period: str | None = None
+    period_scores: tuple[float, ...] = field(default=())
     keywords: tuple[str, ...] = field(default=())

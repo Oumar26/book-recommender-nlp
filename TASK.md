@@ -45,12 +45,12 @@ Mettre à jour la colonne **Statut** (et **Responsable**) à chaque changement ;
 | P1-06 | Normaliser le texte + journal des lignes retirées | P1 | 0,05 j | | ✅ | 2026-11-23 |
 | P1-07 | Genre normalisé (mapping) | P1 | 0,15 j | | ✅ | 2026-11-23 |
 | P1-08 | Âge minimum + catégorie de longueur | P1 | 0,05 j | | ✅ | 2026-11-23 |
-| P1-09 | Thèmes, style, atmosphère (zero-shot) | P1 | 0,3 j | | ⬜ | |
-| P1-10 | Mots-clés (KeyBERT) | P2 | 0,1 j | | ⬜ | |
+| P1-09 | Thèmes, style, atmosphère (zero-shot) | P1 | 0,3 j | | 🔄 | Code + notebook Colab prêts ; passage GPU à lancer |
+| P1-10 | Mots-clés (KeyBERT) | P2 | 0,1 j | | 🔄 | Code + notebook Colab prêts ; passage GPU à lancer |
 | P1-11 | ~~Complexité 1-5 + échantillon annoté~~ | – | – | | ➖ | Retirée le 2026-11-23 (critère de complexité supprimé) |
-| P1-12 | Période (setting ou similarité) | P2 | 0,1 j | | ⬜ | setting = lieux, pas d'époques → zero-shot sur la description |
+| P1-12 | Période (setting ou similarité) | P2 | 0,1 j | | 🔄 | Code + notebook Colab prêts ; passage GPU à lancer |
 | P1-13 | Cas d'usage PrepareCatalog + CLI → books.parquet | P1 | 0,15 j | | 🔄 | Partie CPU faite (books_clean.parquet) ; reste l'étape NLP |
-| P1-14 | Rédiger docs/dataset.md | P1 | 0,1 j | | ⬜ | |
+| P1-14 | Rédiger docs/dataset.md | P1 | 0,1 j | | 🔄 | Rédigé ; section NLP à compléter après Colab |
 
 ## Phase 2 – Moteur sémantique
 

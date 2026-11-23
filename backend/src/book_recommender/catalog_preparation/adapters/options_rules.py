@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from ..domain.labels import LabelSet
 from ..domain.rules import AgeRule, CatalogRules, ExclusionRule, LengthCategory
 
 
@@ -32,3 +33,30 @@ def load_catalog_rules(options_path: Path) -> CatalogRules:
             if c["id"] != "any"
         ),
     )
+
+
+LABEL_SET_NAMES = ("themes", "atmospheres", "narrative_styles", "periods")
+
+
+def load_label_sets(options_path: Path) -> tuple[LabelSet, ...]:
+    """Listes zero-shot d'options.json ; « indifférent » (sans hypothèse) est ignoré."""
+    options = json.loads(options_path.read_text(encoding="utf-8"))
+    config = options["enrichment"]
+    label_sets = []
+    for name in LABEL_SET_NAMES:
+        items = [o for o in options[name] if o.get("hypothesis")]
+        label_sets.append(
+            LabelSet(
+                name=name,
+                ids=tuple(o["id"] for o in items),
+                hypotheses=tuple(o["hypothesis"] for o in items),
+                threshold=float(config[name]["threshold"]),
+                max_labels=int(config[name]["max_labels"]),
+            )
+        )
+    return tuple(label_sets)
+
+
+def load_keywords_top_n(options_path: Path) -> int:
+    options = json.loads(options_path.read_text(encoding="utf-8"))
+    return int(options["enrichment"]["keywords"]["top_n"])

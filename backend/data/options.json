@@ -487,5 +487,27 @@
       "Nonfiction"
     ],
     "min_description_words": 30
+  },
+  "enrichment": {
+    "notes": "Sélection des étiquettes à partir des probabilités NLI (entailment). Seuils à recalibrer après le premier passage : les scores bruts sont conservés.",
+    "themes": {
+      "threshold": 0.5,
+      "max_labels": 3
+    },
+    "atmospheres": {
+      "threshold": 0.5,
+      "max_labels": 2
+    },
+    "narrative_styles": {
+      "threshold": 0.5,
+      "max_labels": 2
+    },
+    "periods": {
+      "threshold": 0.5,
+      "max_labels": 1
+    },
+    "keywords": {
+      "top_n": 8
+    }
   }
 }
