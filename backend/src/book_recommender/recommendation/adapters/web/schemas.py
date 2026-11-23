@@ -49,7 +49,7 @@ class OptionsResponse(_Schema):
 
 
 class RecommendRequest(_Schema):
-    """Les 14 champs du questionnaire (SPEC, section 3), plus le filtre « pas de série »."""
+    """Les 13 champs du questionnaire (SPEC, section 3), plus le filtre « pas de série »."""
 
     description: str = Field(
         description=f"Ce que le lecteur aime, au moins {DESCRIPTION_MIN_WORDS} mots."
@@ -63,7 +63,6 @@ class RecommendRequest(_Schema):
     atmospheres: list[str] = Field(default_factory=list)
     period: str = "any"
     narrative_styles: list[str] = Field(default_factory=list)
-    complexity: Likert = 3
     importance_themes: Likert = 3
     importance_style: Likert = 3
     importance_atmosphere: Likert = 3
@@ -102,9 +101,8 @@ class Criterion(StrEnum):
     ATMOSPHERE = "atmosphere"  # w3
     STYLE = "style"  # w4
     GENRE = "genre"  # w5
-    COMPLEXITY = "complexity"  # w6
-    LIKED_BOOK = "liked_book"  # w7
-    AVOID = "avoid"  # w8 (pénalité)
+    LIKED_BOOK = "liked_book"  # w6
+    AVOID = "avoid"  # w7 (pénalité)
 
 
 class SoftFilter(StrEnum):

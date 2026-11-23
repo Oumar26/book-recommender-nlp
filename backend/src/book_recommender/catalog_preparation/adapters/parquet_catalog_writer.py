@@ -20,7 +20,7 @@ class ParquetCatalogWriter:
             {k: list(v) if isinstance(v, tuple) else v for k, v in asdict(b).items()} for b in books
         ]
         frame = pd.DataFrame(rows)
-        for column in ("pages", "year", "complexity"):
+        for column in ("pages", "year"):
             frame[column] = frame[column].astype("Int64")
         self._path.parent.mkdir(parents=True, exist_ok=True)
         frame.to_parquet(self._path, index=False)

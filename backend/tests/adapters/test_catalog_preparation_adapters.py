@@ -66,7 +66,6 @@ def test_parquet_writer_roundtrip(tmp_path: Path) -> None:
         cover_url=None,
         rating=4.2,
         num_ratings=10,
-        complexity=3,
     )
     path = tmp_path / "out" / "books.parquet"
     ParquetCatalogWriter(path).write([book])

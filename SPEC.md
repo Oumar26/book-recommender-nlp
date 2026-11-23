@@ -4,7 +4,7 @@
 
 Le projet construit une web app qui recommande les 3 livres les plus adaptés aux préférences littéraires d'un utilisateur, par similarité sémantique et avec des explications transparentes. Il est techniquement faisable avec des outils open source mats, sur un ordinateur portable, sans GPU.
 
-- **Thème :** recommandation de livres fondée sur les préférences littéraires (genres, thèmes, style, atmosphère, complexité).
+- **Thème :** recommandation de livres fondée sur les préférences littéraires (genres, thèmes, style, atmosphère).
 - **Résultat attendu :** un système explicable, fondé sur la similarité sémantique contextuelle, qui va au-delà de la simple correspondance de mots-clés.
 - **Choix structurant :** pas d'entraînement de modèle. Le problème est non supervisé (pas de labels), on utilise donc des modèles d'embeddings pré-entraînés. La valeur ajoutée porte sur la représentation des données, le scoring pondéré et l'explicabilité.
 - **Stack :** back-end Python (FastAPI), front-end JavaScript (React + Vite).
@@ -26,18 +26,17 @@ Le système couvre les 6 exigences de la consigne. Le chatbot est un bonus, réa
 
 ## 3. Données d'entrée utilisateur
 
-Le questionnaire compte 14 champs, chacun avec un rôle précis : similarité sémantique, poids, filtre dur ou filtre souple. Le budget initial est remplacé par la longueur, car le dataset ne fournit pas de prix fiable.
+Le questionnaire compte 13 champs, chacun avec un rôle précis : similarité sémantique, poids, filtre dur ou filtre souple. Le budget initial est remplacé par la longueur, car le dataset ne fournit pas de prix fiable.
 
 | Champ | Type | Widget | Rôle dans le moteur |
 | --- | --- | --- | --- |
 | Description libre | str | Question ouverte, min. \~20 mots | Similarité avec la description du livre |
-| Livre aimé | str ou vide | Autocomplétion sur le titre | Point de référence (terme w7 du score) ; exclu des résultats |
+| Livre aimé | str ou vide | Autocomplétion sur le titre | Point de référence (terme w6 du score) ; exclu des résultats |
 | Genres | list\[str\] | Multi-select, liste fermée (8 à 12 genres) | Match avec le genre normalisé du livre |
 | Thèmes | list\[str\] | Tags + champ « autre » | Similarité avec les thèmes extraits |
 | Atmosphère | list\[str\] | Tags (sombre, lumineuse, mélancolique…) | Similarité sémantique |
 | Période | str | Choix unique, « indifférent » possible | Filtre souple |
 | Style narratif | list\[str\] ou vide | Tags (1re personne, dialogues, poétique…) | Similarité avec la colonne Style |
-| Complexité | int | Likert 1-5 (légère → exigeante) | Score de proximité |
 | Importance thèmes | int | Likert 1-5 | Poids de la formule |
 | Importance style | int | Likert 1-5 | Poids de la formule |
 | Importance atmosphère | int | Likert 1-5 | Poids de la formule |
@@ -80,8 +79,7 @@ Le pourcentage entre parenthèses est le taux de remplissage (completeness) : la
 | Genre normalisé | Mapping des genres Goodreads vers la liste fermée du questionnaire |
 | Thèmes, style, atmosphère | Classification zero-shot sur des listes fixes |
 | Mots-clés | KeyBERT |
-| Complexité (1-5) | Indicateur : pages + lisibilité de la description, vérifié sur un échantillon annoté |
-| Période | Champ setting quand il existe (22 %), sinon similarité avec la description |
+| Période | Classification zero-shot sur la description (le champ setting ne contient que des lieux) |
 | Âge minimum | Règle sur les genres (Juvenile, Young Adult) |
 | Catégorie de longueur | Seuils sur le nombre de pages |
 
@@ -112,14 +110,13 @@ Pourquoi pas d'entraînement : sans données labellisées (« cet utilisateur a 
 Le score d'un livre est une somme pondérée de similarités par critère, moins une pénalité « à éviter », calculée uniquement sur les livres qui passent les filtres.
 
 ```latex
-S = w_1\,\mathrm{sim}(\text{texte libre}, \text{description}) + w_2\,\mathrm{sim}(\text{thèmes}) + w_3\,\mathrm{sim}(\text{atmosphère}) + w_4\,\mathrm{sim}(\text{style}) + w_5\,\mathrm{genre} + w_6\left(1 - \frac{|c_u - c_l|}{4}\right) + w_7\,\mathrm{sim}(\text{livre aimé}, \text{livre}) - w_8\,\mathrm{sim}(\text{à éviter}, \text{livre})
+S = w_1\,\mathrm{sim}(\text{texte libre}, \text{description}) + w_2\,\mathrm{sim}(\text{thèmes}) + w_3\,\mathrm{sim}(\text{atmosphère}) + w_4\,\mathrm{sim}(\text{style}) + w_5\,\mathrm{genre} + w_6\,\mathrm{sim}(\text{livre aimé}, \text{livre}) - w_7\,\mathrm{sim}(\text{à éviter}, \text{livre})
 ```
 
 - **Poids :** valeurs par défaut fixées sur les profils de test ; w2, w3 et w4 sont modulés par les réponses Likert d'importance (1-5).
 - **Modulation Likert :** chaque poids modulé vaut `w_i × likert_i / 3` (3 = neutre, 1 → × 0,33, 5 → × 1,67). Les trois poids sont ensuite renormalisés pour que w2 + w3 + w4 garde la même somme que les valeurs par défaut : le Likert change la répartition entre thèmes, atmosphère et style, pas l'échelle du score, et le seuil garde le même sens pour tous les utilisateurs.
 - **Genre :** 1 si le genre du livre est dans la sélection, sinon similarité entre genres.
-- **Complexité :** c\_u et c\_l sur l'échelle 1-5 ; proximité, pas égalité.
-- **Livre aimé :** choisi dans le catalogue par autocomplétion ; son embedding pré-calculé est comparé à chaque livre. Si le champ est vide, w7 = 0.
+- **Livre aimé :** choisi dans le catalogue par autocomplétion ; son embedding pré-calculé est comparé à chaque livre. Si le champ est vide, w6 = 0.
 - **Filtres durs :** âge ; livre aimé exclu.
 - **Filtres souples :** longueur et période réduisent le score au lieu d'exclure, pour ne pas vider les résultats.
 - **Seuil :** un livre sous un score minimum n'est pas recommandé ; si moins de 3 livres passent, l'app le signale.
@@ -137,7 +134,7 @@ L'évaluation mesure Precision@3 et nDCG@3 pour TF-IDF, fastText et SBERT. Accur
 1. **Profils fictifs :** 10 à 15 profils rédigés par l'équipe, chacun avec la liste des livres jugés pertinents (data/eval/test\_profiles.json).
 2. **Utilisateurs réels (Goodbooks-10k) :** construire un profil à partir de quelques livres bien notés par un utilisateur, puis vérifier si le top 3 contient d'autres livres qu'il a bien notés.
 3. **Réglage :** ajuster les poids et les seuils sur ces mesures, et noter chaque itération (phase « itérer » de la consigne).
-4. **Limites à documenter :** négation, biais d'un corpus surtout anglophone et tiré de Goodreads, descriptions marketing, champ setting peu rempli.
+4. **Limites à documenter :** négation, biais d'un corpus surtout anglophone et tiré de Goodreads, descriptions marketing, période seulement déduite de la description (le champ setting ne donne que des lieux).
 
 Le tableau comparatif des trois approches sert à justifier le choix du modèle dans la présentation.
 
@@ -245,7 +242,7 @@ Le front peut avancer en parallèle dès la phase 0, avec des données fictives 
 | --- | --- | --- |
 | Négation mal comprise par les embeddings | Livres à éviter recommandés | Champ « À éviter » séparé + pénalité + consigne dans l'interface |
 | Corpus surtout anglophone | Moins bonne similarité FR → EN | SBERT multilingue ; garder les livres FR du dataset |
-| Champ setting rempli à 22 % | Période peu fiable | Bonus quand il existe, sinon similarité avec la description |
+| Champ setting sans époque (lieux seulement) | Période peu fiable | Zero-shot sur la description ; filtre souple, jamais excluant |
 | Descriptions marketing | Thèmes bruités | Filtre de longueur ; CMU Book Summary en complément si besoin |
 | Modèle rechargé à chaque requête | Réponses de plusieurs secondes | Chargement unique au démarrage de FastAPI |
 | Chatbot trop ambitieux | Retard sur le cœur du projet | Le traiter seulement après la phase 5 |

@@ -32,7 +32,6 @@ def _mock(name: str) -> dict:
 
 def test_minimal_request_uses_neutral_defaults() -> None:
     request = RecommendRequest(description=DESCRIPTION, age=30)
-    assert request.complexity == 3
     assert (request.importance_themes, request.importance_style, request.importance_atmosphere) == (
         3,
         3,
@@ -43,7 +42,7 @@ def test_minimal_request_uses_neutral_defaults() -> None:
 
 
 @pytest.mark.parametrize(
-    "field", ["complexity", "importance_themes", "importance_style", "importance_atmosphere"]
+    "field", ["importance_themes", "importance_style", "importance_atmosphere"]
 )
 @pytest.mark.parametrize("value", [0, 6])
 def test_likert_must_be_between_1_and_5(field: str, value: int) -> None:

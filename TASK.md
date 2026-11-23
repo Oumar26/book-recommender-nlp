@@ -2,7 +2,7 @@
 
 Tableau d'avancement du projet. Le détail de chaque tâche (critère de fin, dépendances) est dans [Backlog.md](Backlog.md).
 
-**Statuts :** ⬜ À faire · 🔄 En cours · ✅ Terminé · ⛔ Bloqué
+**Statuts :** ⬜ À faire · 🔄 En cours · ✅ Terminé · ⛔ Bloqué · ➖ Retirée
 **Priorités :** P1 indispensable · P2 important · P3 optionnel
 
 Mettre à jour la colonne **Statut** (et **Responsable**) à chaque changement ; noter la date de fin dans **Notes**.
@@ -12,9 +12,9 @@ Mettre à jour la colonne **Statut** (et **Responsable**) à chaque changement ;
 | Phase | Tâches | Terminées | Estimation | Statut |
 | --- | --- | --- | --- | --- |
 | 0. Cadrage | 8 | 8 | ½ j | ✅ |
-| 1. Données | 14 | 8 | 1 à 2 j | 🔄 |
+| 1. Données | 13 | 8 | 1 à 2 j | 🔄 |
 | 2. Moteur | 12 | 0 | 2 j | ⬜ |
-| 3. Scoring | 16 | 0 | 1 à 2 j | ⬜ |
+| 3. Scoring | 15 | 0 | 1 à 2 j | ⬜ |
 | 4. Évaluation | à découper | – | 1 j | ⬜ |
 | 5. API + front | à découper | – | 2 j | ⬜ |
 | 6. Bonus chatbot | à découper | – | 1 à 2 j | ⬜ |
@@ -47,7 +47,7 @@ Mettre à jour la colonne **Statut** (et **Responsable**) à chaque changement ;
 | P1-08 | Âge minimum + catégorie de longueur | P1 | 0,05 j | | ✅ | 2026-11-23 |
 | P1-09 | Thèmes, style, atmosphère (zero-shot) | P1 | 0,3 j | | ⬜ | |
 | P1-10 | Mots-clés (KeyBERT) | P2 | 0,1 j | | ⬜ | |
-| P1-11 | Complexité 1-5 + échantillon annoté | P2 | 0,15 j | | 🔄 | Indicateur fait ; échantillon à annoter : data/eval/complexity_sample.csv |
+| P1-11 | ~~Complexité 1-5 + échantillon annoté~~ | – | – | | ➖ | Retirée le 2026-11-23 (critère de complexité supprimé) |
 | P1-12 | Période (setting ou similarité) | P2 | 0,1 j | | ⬜ | setting = lieux, pas d'époques → zero-shot sur la description |
 | P1-13 | Cas d'usage PrepareCatalog + CLI → books.parquet | P1 | 0,15 j | | 🔄 | Partie CPU faite (books_clean.parquet) ; reste l'étape NLP |
 | P1-14 | Rédiger docs/dataset.md | P1 | 0,1 j | | ⬜ | |
@@ -77,10 +77,10 @@ Mettre à jour la colonne **Statut** (et **Responsable**) à chaque changement ;
 | P3-02 | ScoringPolicy (poids, validation, modulation Likert) | P1 | 0,15 j | | ⬜ | |
 | P3-03 | Filtres durs (âge, livre aimé exclu) | P1 | 0,1 j | | ⬜ | |
 | P3-04 | Score genre | P1 | 0,1 j | | ⬜ | |
-| P3-05 | Score complexité (proximité) | P1 | 0,05 j | | ⬜ | |
+| P3-05 | ~~Score complexité (proximité)~~ | – | – | | ➖ | Retirée le 2026-11-23 (critère de complexité supprimé) |
 | P3-06 | Pénalité « à éviter » | P1 | 0,1 j | | ⬜ | |
 | P3-07 | Filtres souples longueur et période | P1 | 0,1 j | | ⬜ | |
-| P3-08 | Terme livre aimé (w7) | P1 | 0,1 j | | ⬜ | |
+| P3-08 | Terme livre aimé (w6) | P1 | 0,1 j | | ⬜ | |
 | P3-09 | Score global + seuil + top 3 | P1 | 0,1 j | | ⬜ | |
 | P3-10 | Raisons structurées + mots-clés communs | P1 | 0,1 j | | ⬜ | |
 | P3-11 | Affinité par catégorie | P2 | 0,1 j | | ⬜ | |

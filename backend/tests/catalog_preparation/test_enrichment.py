@@ -33,20 +33,3 @@ def test_min_age(rules, tags, expected) -> None:
 )
 def test_length_category(rules, pages, expected) -> None:
     assert enrichment.length_category(pages, rules) == expected
-
-
-def test_complexity_scale_bounds() -> None:
-    assert enrichment.complexity(0.0, 0.0, ()) == 1
-    assert enrichment.complexity(1.0, 1.0, ()) == 5
-    assert enrichment.complexity(0.5, 0.5, ()) == 3
-
-
-def test_complexity_uses_available_signal_only() -> None:
-    assert enrichment.complexity(None, 1.0, ()) == 5
-    assert enrichment.complexity(None, None, ()) is None
-
-
-def test_complexity_tag_adjustments() -> None:
-    assert enrichment.complexity(0.5, 0.5, ("Classics",)) == 4
-    assert enrichment.complexity(1.0, 1.0, ("Classics",)) == 5
-    assert enrichment.complexity(1.0, 1.0, ("Middle Grade",)) == 2

@@ -1,4 +1,4 @@
-"""Cas d'usage PrepareCatalog (P1-04 à P1-08, P1-11, P1-13).
+"""Cas d'usage PrepareCatalog (P1-04 à P1-08, P1-13).
 
 Nettoyage + enrichissements par règles.
 
@@ -13,7 +13,7 @@ from dataclasses import dataclass, field, replace
 from ..domain import cleaning, enrichment
 from ..domain.books import CatalogBook, RawBook
 from ..domain.rules import CatalogRules
-from .ports import CatalogWriter, RawBookSource, ReadabilityMeter
+from .ports import CatalogWriter, RawBookSource
 
 
 @dataclass(frozen=True)
@@ -46,12 +46,10 @@ class PrepareCatalog:
         source: RawBookSource,
         writer: CatalogWriter,
         rules: CatalogRules,
-        readability: ReadabilityMeter | None = None,
     ) -> None:
         self._source = source
         self._writer = writer
         self._rules = rules
-        self._readability = readability
 
     def __call__(self, request: PrepareCatalogRequest) -> PreparationReport:
         books = list(self._source.read())
@@ -107,14 +105,8 @@ class PrepareCatalog:
 
     def _enrich(self, books: Sequence[RawBook], current_year: int) -> list[CatalogBook]:
         rules = self._rules
-        grades = [
-            self._readability.grade(b.description or "") if self._readability else None
-            for b in books
-        ]
-        pages_pct = _percentiles([b.pages for b in books])
-        grade_pct = _percentiles(grades)
         catalog = []
-        for book, grade, p_pct, g_pct in zip(books, grades, pages_pct, grade_pct, strict=True):
+        for book in books:
             catalog.append(
                 CatalogBook(
                     book_id=book.book_id,
@@ -134,22 +126,6 @@ class PrepareCatalog:
                     cover_url=book.cover_url,
                     rating=book.rating,
                     num_ratings=book.num_ratings,
-                    readability_grade=grade,
-                    complexity=enrichment.complexity(p_pct, g_pct, book.genre_tags),
                 )
             )
         return catalog
-
-
-def _percentiles(values: Sequence[float | None]) -> list[float | None]:
-    """Rang centile (0-1) de chaque valeur parmi les valeurs connues ; ex aequo → rang moyen."""
-    known = sorted(v for v in values if v is not None)
-    if len(known) < 2:
-        return [0.5 if v is not None else None for v in values]
-    first: dict[float, int] = {}
-    last: dict[float, int] = {}
-    for i, v in enumerate(known):
-        first.setdefault(v, i)
-        last[v] = i
-    n = len(known) - 1
-    return [None if v is None else (first[v] + last[v]) / 2 / n for v in values]

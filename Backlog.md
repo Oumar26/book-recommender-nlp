@@ -17,7 +17,7 @@ Objectif : figer le questionnaire et le contrat de l'API, poser le squelette du 
 | ID | Tâche | Détail / critère de fin | Prio | Estim. | Dépend de |
 | --- | --- | --- | --- | --- | --- |
 | P0-01 | Créer la structure du repo | Arborescence `book-recommender-nlp/` de la SPEC (section 8) : `docs/`, `backend/`, `frontend/`, README minimal, `.gitignore` (dont `backend/data/raw`, `processed`, `embeddings`) | P1 | 0,05 | – |
-| P0-02 | Initialiser le back-end Python | `pyproject.toml` (fastapi, pydantic, pandas, pyarrow, numpy, scikit-learn, sentence-transformers, transformers, keybert, textstat, gensim/fasttext, umap-learn, pytest, ruff) ; `pip install -e .` fonctionne | P1 | 0,05 | P0-01 |
+| P0-02 | Initialiser le back-end Python | `pyproject.toml` (fastapi, pydantic, pandas, pyarrow, numpy, scikit-learn, sentence-transformers, transformers, keybert, gensim/fasttext, umap-learn, pytest, ruff) ; `pip install -e .` fonctionne | P1 | 0,05 | P0-01 |
 | P0-03 | Squelette Clean Architecture | Packages vides `recommendation/{domain,application,adapters}`, `catalog_preparation/`, `preference_options/`, `book_search/`, `recommender_evaluation/`, `main/` ; `main/settings.py` lit la configuration ; un test vérifie que `domain/` et `application/` n'importent ni FastAPI, ni Pydantic, ni sentence-transformers, ni pandas | P2 | 0,1 | P0-02 |
 | P0-04 | Initialiser le front-end | Projet React + Vite, dossiers par fonctionnalité (`questionnaire/`, `recommendations/`, `how-it-works/`, `api-client/`) ; proxy Vite vers l'API | P2 | 0,05 | P0-01 |
 | P0-05 | Figer le questionnaire | Listes fermées : genres (8 à 12), thèmes, atmosphères, styles narratifs, périodes, cases rapides « à éviter » ; seuils de longueur (< 200, 200-400, > 400) ; règles d'âge. Fichier de référence unique (ex. `backend/data/options.json`) | P1 | 0,1 | – |
@@ -57,17 +57,17 @@ Objectif : produire `data/processed/books.parquet`, nettoyé et enrichi, avec un
 | P1-08 | Âge minimum + catégorie de longueur | Règle Juvenile / Young Adult → âge minimum ; seuils sur les pages → court / moyen / long | P1 | 0,05 | P1-06 |
 | P1-09 | Thèmes, style, atmosphère (zero-shot) | Classification zero-shot sur les listes fixes de P0-05 ; choix du modèle (ex. NLI multilingue) ; traitement par lots avec cache ; mesurer le temps CPU et réduire le corpus si trop long | P1 | 0,3 | P0-05, P1-06 |
 | P1-10 | Mots-clés (KeyBERT) | 5 à 10 mots-clés par livre (servent aux « mots-clés communs » des explications) | P2 | 0,1 | P1-06 |
-| P1-11 | Complexité 1-5 | Indicateur pages + lisibilité de la description (textstat) ; vérifié sur un échantillon annoté à la main (~30 livres) | P2 | 0,15 | P1-06 |
-| P1-12 | Période | Champ setting quand il existe (22 %), sinon similarité entre la description et des descriptions de périodes | P2 | 0,1 | P1-06, P2-06 |
+| ~~P1-11~~ | ~~Complexité 1-5~~ | **Retirée** (2026-11-23) : critère de complexité supprimé, voir Décisions | – | – | – |
+| P1-12 | Période | Classification zero-shot de la description sur les périodes de options.json (le champ setting ne contient que des lieux) | P2 | 0,1 | P1-06 |
 
 ### 1.d Assemblage et documentation
 
 | ID | Tâche | Détail / critère de fin | Prio | Estim. | Dépend de |
 | --- | --- | --- | --- | --- | --- |
 | P1-13 | Cas d'usage `PrepareCatalog` + CLI | Enchaîne nettoyage et enrichissement ; adapter Parquet ; commande CLI qui produit `data/processed/books.parquet` ; notebooks appellent ce cas d'usage | P1 | 0,15 | P1-04 → P1-12 |
-| P1-14 | `docs/dataset.md` | Origine, structure, colonnes ajoutées et méthodes, lignes retirées par étape, limites (anglophone, Goodreads, descriptions marketing, setting à 22 %) | P1 | 0,1 | P1-13 |
+| P1-14 | `docs/dataset.md` | Origine, structure, colonnes ajoutées et méthodes, lignes retirées par étape, limites (anglophone, Goodreads, descriptions marketing, setting sans époque) | P1 | 0,1 | P1-13 |
 
-**Total phase 1 : ≈ 1,9 j**
+**Total phase 1 : ≈ 1,75 j**
 
 ---
 
@@ -117,7 +117,7 @@ Objectif : appliquer la formule de la SPEC (section 6) et renvoyer un top 3 expl
 
 ```
 S = w1·sim(texte libre, description) + w2·sim(thèmes) + w3·sim(atmosphère) + w4·sim(style)
-  + w5·genre + w6·(1 − |c_u − c_l| / 4) + w7·sim(livre aimé, livre) − w8·sim(à éviter, livre)
+  + w5·genre + w6·sim(livre aimé, livre) − w7·sim(à éviter, livre)
 ```
 
 ### 3.a Entités et politique de scoring (domaine)
@@ -125,7 +125,7 @@ S = w1·sim(texte libre, description) + w2·sim(thèmes) + w3·sim(atmosphère) 
 | ID | Tâche | Détail / critère de fin | Prio | Estim. | Dépend de |
 | --- | --- | --- | --- | --- | --- |
 | P3-01 | Entités `ReaderProfile`, `Book`, `Match` | Dataclasses du domaine, sans dépendance externe | P1 | 0,1 | P0-03 |
-| P3-02 | `ScoringPolicy` | Poids par défaut w1 à w8, seuil minimum ; validation (poids ≥ 0) ; modulation de w2, w3, w4 par les Likert d'importance (w × likert / 3, puis renormalisation pour garder la somme w2 + w3 + w4 par défaut ; tests : Likert tous égaux → poids inchangés) ; valeurs lues dans `main/settings.py` puis injectées | P1 | 0,15 | P3-01 |
+| P3-02 | `ScoringPolicy` | Poids par défaut w1 à w7, seuil minimum ; validation (poids ≥ 0) ; modulation de w2, w3, w4 par les Likert d'importance (w × likert / 3, puis renormalisation pour garder la somme w2 + w3 + w4 par défaut ; tests : Likert tous égaux → poids inchangés) ; valeurs lues dans `main/settings.py` puis injectées | P1 | 0,15 | P3-01 |
 | P3-03 | Règles d'éligibilité (filtres durs) | Âge : < 13 → Juvenile ; 13-17 → YA + Juvenile ; ≥ 18 → tout. Livre aimé exclu | P1 | 0,1 | P3-01 |
 
 ### 3.b Critères de score
@@ -133,10 +133,10 @@ S = w1·sim(texte libre, description) + w2·sim(thèmes) + w3·sim(atmosphère) 
 | ID | Tâche | Détail / critère de fin | Prio | Estim. | Dépend de |
 | --- | --- | --- | --- | --- | --- |
 | P3-04 | Score genre | 1 si le genre du livre est sélectionné, sinon similarité entre genres (matrice précalculée avec l'encodeur) | P1 | 0,1 | P3-01, P2-06 |
-| P3-05 | Score complexité | 1 − \|c_u − c_l\| / 4 ; testé aux bornes (0 et 1) | P1 | 0,05 | P3-01 |
-| P3-06 | Pénalité « à éviter » | Similarité entre le texte « à éviter » (+ cases rapides) et le livre, multipliée par w8 ; ignorée si le champ est vide | P1 | 0,1 | P3-01, P2-10 |
+| ~~P3-05~~ | ~~Score complexité~~ | **Retirée** (2026-11-23) : critère de complexité supprimé, voir Décisions | – | – | – |
+| P3-06 | Pénalité « à éviter » | Similarité entre le texte « à éviter » (+ cases rapides) et le livre, multipliée par w7 ; ignorée si le champ est vide | P1 | 0,1 | P3-01, P2-10 |
 | P3-07 | Filtres souples longueur et période | Réduisent le score au lieu d'exclure (malus ou facteur à fixer) ; « indifférent » = aucun effet | P1 | 0,1 | P3-01 |
-| P3-08 | Terme livre aimé (w7) | Récupérer l'embedding pré-calculé du livre aimé par son identifiant (description, ou moyenne des champs : à trancher) ; similarité cosinus avec chaque livre × w7 ; w7 = 0 si le champ est vide ; critère « livre aimé » présent dans les raisons structurées pour l'explication | P1 | 0,1 | P3-02, P2-09 |
+| P3-08 | Terme livre aimé (w6) | Récupérer l'embedding pré-calculé du livre aimé par son identifiant (description, ou moyenne des champs : à trancher) ; similarité cosinus avec chaque livre × w6 ; w6 = 0 si le champ est vide ; critère « livre aimé » présent dans les raisons structurées pour l'explication | P1 | 0,1 | P3-02, P2-09 |
 
 ### 3.c Classement et explications
 
@@ -156,11 +156,12 @@ S = w1·sim(texte libre, description) + w2·sim(thèmes) + w3·sim(atmosphère) 
 | P3-15 | Démo bout en bout | Commande CLI ou notebook : profil exemple → top 3 avec scores et explications, sur le vrai catalogue avec SBERT | P1 | 0,1 | P3-12, P3-13, P2-09 |
 | P3-16 | `docs/scoring_formula.md` | Formule, rôle de chaque terme, poids par défaut et justification, modulation Likert, filtres durs / souples, seuil, terme livre aimé | P1 | 0,1 | P3-09, P3-08 |
 
-**Total phase 3 : ≈ 1,85 j**
+**Total phase 3 : ≈ 1,8 j**
 
 > Décisions :
 > - le **rythme** a été retiré du questionnaire (aucune donnée dans le dataset pour le mesurer) ;
-> - le **livre aimé** entre dans la formule par le terme w7 (similarité avec son embedding pré-calculé) ;
+> - la **complexité** a été retirée (2026-11-23) : aucune donnée fiable pour la mesurer (seule la lisibilité du résumé marketing était disponible) ; P1-11 et P3-05 supprimées, les poids sont renumérotés (livre aimé w6, « à éviter » w7) ;
+> - le **livre aimé** entre dans la formule par le terme w6 (similarité avec son embedding pré-calculé) ;
 > - **modulation Likert** : w × likert / 3, puis renormalisation de w2 + w3 + w4.
 
 ---

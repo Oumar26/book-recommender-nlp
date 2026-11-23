@@ -44,14 +44,13 @@ Renvoie les listes fermées du questionnaire, avec un `id` (envoyé à l'API) et
 | Champ | Type | Défaut | Contrainte / rôle |
 | --- | --- | --- | --- |
 | `description` | str | requis | ≥ 20 mots ; ce que le lecteur aime |
-| `liked_book_id` | str \| null | null | id de `/api/books/search` ; terme w7, exclu des résultats |
+| `liked_book_id` | str \| null | null | id de `/api/books/search` ; terme w6, exclu des résultats |
 | `genres` | list[id] | [] | match avec le genre normalisé |
 | `themes` | list[id] | [] | similarité avec les thèmes |
 | `other_themes` | str | "" | champ « autre » des thèmes, ≤ 300 car. |
 | `atmospheres` | list[id] | [] | similarité |
 | `period` | id | "any" | filtre souple |
 | `narrative_styles` | list[id] | [] | similarité avec le style |
-| `complexity` | int 1-5 | 3 | proximité |
 | `importance_themes` | int 1-5 | 3 | module w2 |
 | `importance_style` | int 1-5 | 3 | module w4 |
 | `importance_atmosphere` | int 1-5 | 3 | module w3 |
@@ -74,7 +73,7 @@ Les champs inconnus sont refusés (`422`). Les doublons dans les listes sont ret
       "score": 0.7075,
       "criteria": [
         {"criterion": "themes", "similarity": 0.81, "weight": 0.15, "contribution": 0.1215, "matched_terms": ["identité", "amour"]},
-        "… un objet par critère : description, themes, atmosphere, style, genre, complexity, liked_book, avoid"
+        "… un objet par critère : description, themes, atmosphere, style, genre, liked_book, avoid"
       ],
       "soft_filters": [{"filter": "period", "matched": true, "factor": 1.0}],
       "shared_keywords": ["governess", "secret"],

@@ -43,8 +43,6 @@ class CatalogBook:
     cover_url: str | None
     rating: float | None
     num_ratings: int
-    readability_grade: float | None = None
-    complexity: int | None = None  # 1-5
     # Colonnes NLP (zero-shot, KeyBERT), remplies par l'étape d'enrichissement sur GPU.
     themes: tuple[str, ...] = field(default=())
     atmospheres: tuple[str, ...] = field(default=())

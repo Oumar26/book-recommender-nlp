@@ -37,7 +37,6 @@ def prepare_catalog(settings: Settings) -> None:
     from ..catalog_preparation.adapters.csv_raw_book_source import CsvRawBookSource
     from ..catalog_preparation.adapters.options_rules import load_catalog_rules
     from ..catalog_preparation.adapters.parquet_catalog_writer import ParquetCatalogWriter
-    from ..catalog_preparation.adapters.textstat_readability import TextstatReadability
     from ..catalog_preparation.application.prepare_catalog import (
         PrepareCatalog,
         PrepareCatalogRequest,
@@ -48,7 +47,6 @@ def prepare_catalog(settings: Settings) -> None:
         source=CsvRawBookSource(settings.raw_dir / BEST_BOOKS_CSV),
         writer=ParquetCatalogWriter(output),
         rules=load_catalog_rules(settings.options_path),
-        readability=TextstatReadability(),
     )
     report = use_case(PrepareCatalogRequest(current_year=date.today().year))
 

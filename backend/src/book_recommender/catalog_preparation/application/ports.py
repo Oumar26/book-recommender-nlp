@@ -12,9 +12,3 @@ class RawBookSource(Protocol):
 
 class CatalogWriter(Protocol):
     def write(self, books: Sequence[CatalogBook]) -> None: ...
-
-
-class ReadabilityMeter(Protocol):
-    def grade(self, text: str) -> float:
-        """Niveau de lecture (plus haut = plus difficile)."""
-        ...
