@@ -1,150 +1,491 @@
 {
   "version": 1,
   "notes": "Référence unique du questionnaire (P0-05). label_fr : affiché dans l'interface. hypothesis : phrase anglaise utilisée par le zero-shot NLI et l'encodage (le catalogue est anglophone).",
-
   "genres": [
     {
       "id": "fantasy",
       "label_fr": "Fantasy",
-      "goodreads_tags": ["Fantasy", "Magic", "Urban Fantasy", "High Fantasy", "Epic Fantasy", "Young Adult Fantasy", "Science Fiction Fantasy", "Paranormal", "Supernatural", "Mythology", "Fairy Tales", "Vampires", "Shapeshifters"]
+      "goodreads_tags": [
+        "Fantasy",
+        "Magic",
+        "Urban Fantasy",
+        "High Fantasy",
+        "Epic Fantasy",
+        "Young Adult Fantasy",
+        "Science Fiction Fantasy",
+        "Paranormal",
+        "Supernatural",
+        "Mythology",
+        "Fairy Tales",
+        "Vampires",
+        "Shapeshifters"
+      ]
     },
     {
       "id": "science_fiction",
       "label_fr": "Science-fiction",
-      "goodreads_tags": ["Science Fiction", "Dystopia", "Post Apocalyptic", "Time Travel", "Speculative Fiction", "Science Fiction Fantasy"]
+      "goodreads_tags": [
+        "Science Fiction",
+        "Dystopia",
+        "Post Apocalyptic",
+        "Time Travel",
+        "Speculative Fiction",
+        "Science Fiction Fantasy"
+      ]
     },
     {
       "id": "romance",
       "label_fr": "Romance",
-      "goodreads_tags": ["Romance", "Contemporary Romance", "Paranormal Romance", "Historical Romance", "Chick Lit", "New Adult"]
+      "goodreads_tags": [
+        "Romance",
+        "Contemporary Romance",
+        "Paranormal Romance",
+        "Historical Romance",
+        "Chick Lit",
+        "New Adult"
+      ]
     },
     {
       "id": "crime_thriller",
       "label_fr": "Policier / thriller",
-      "goodreads_tags": ["Mystery", "Crime", "Detective", "Thriller", "Suspense", "Mystery Thriller", "Romantic Suspense"]
+      "goodreads_tags": [
+        "Mystery",
+        "Crime",
+        "Detective",
+        "Thriller",
+        "Suspense",
+        "Mystery Thriller",
+        "Romantic Suspense"
+      ]
     },
     {
       "id": "horror",
       "label_fr": "Horreur",
-      "goodreads_tags": ["Horror"]
+      "goodreads_tags": [
+        "Horror"
+      ]
     },
     {
       "id": "historical",
       "label_fr": "Historique",
-      "goodreads_tags": ["Historical Fiction", "Historical", "War", "Military Fiction"]
+      "goodreads_tags": [
+        "Historical Fiction",
+        "Historical",
+        "War",
+        "Military Fiction"
+      ]
     },
     {
       "id": "contemporary_literature",
       "label_fr": "Littérature contemporaine",
-      "goodreads_tags": ["Contemporary", "Literary Fiction", "Realistic Fiction", "Literature", "Drama", "Family"]
+      "goodreads_tags": [
+        "Contemporary",
+        "Literary Fiction",
+        "Realistic Fiction",
+        "Literature",
+        "Drama",
+        "Family"
+      ]
     },
     {
       "id": "classics",
       "label_fr": "Classiques",
-      "goodreads_tags": ["Classics"]
+      "goodreads_tags": [
+        "Classics"
+      ]
     },
     {
       "id": "adventure",
       "label_fr": "Aventure",
-      "goodreads_tags": ["Adventure", "Action"]
+      "goodreads_tags": [
+        "Adventure",
+        "Action"
+      ]
     },
     {
       "id": "humor",
       "label_fr": "Humour",
-      "goodreads_tags": ["Humor", "Comedy"]
+      "goodreads_tags": [
+        "Humor",
+        "Comedy"
+      ]
     }
   ],
-
   "themes": [
-    {"id": "love", "label_fr": "amour", "hypothesis": "This story is about love."},
-    {"id": "friendship", "label_fr": "amitié", "hypothesis": "This story is about friendship."},
-    {"id": "family", "label_fr": "famille", "hypothesis": "This story is about family relationships."},
-    {"id": "coming_of_age", "label_fr": "passage à l'âge adulte", "hypothesis": "This story is about growing up and coming of age."},
-    {"id": "identity", "label_fr": "identité", "hypothesis": "This story is about identity and finding oneself."},
-    {"id": "power_politics", "label_fr": "pouvoir et politique", "hypothesis": "This story is about power and politics."},
-    {"id": "war", "label_fr": "guerre", "hypothesis": "This story is about war."},
-    {"id": "survival", "label_fr": "survie", "hypothesis": "This story is about survival."},
-    {"id": "revenge", "label_fr": "vengeance", "hypothesis": "This story is about revenge."},
-    {"id": "betrayal", "label_fr": "trahison", "hypothesis": "This story is about betrayal."},
-    {"id": "crime_justice", "label_fr": "crime et justice", "hypothesis": "This story is about crime and justice."},
-    {"id": "grief_loss", "label_fr": "deuil et perte", "hypothesis": "This story is about grief and loss."},
-    {"id": "redemption", "label_fr": "rédemption", "hypothesis": "This story is about redemption."},
-    {"id": "freedom_oppression", "label_fr": "liberté et oppression", "hypothesis": "This story is about freedom and oppression."},
-    {"id": "quest_journey", "label_fr": "quête et voyage", "hypothesis": "This story is about a quest or a journey."},
-    {"id": "social_inequality", "label_fr": "inégalités sociales", "hypothesis": "This story is about social inequality and class."}
+    {
+      "id": "love",
+      "label_fr": "amour",
+      "hypothesis": "This story is about love."
+    },
+    {
+      "id": "friendship",
+      "label_fr": "amitié",
+      "hypothesis": "This story is about friendship."
+    },
+    {
+      "id": "family",
+      "label_fr": "famille",
+      "hypothesis": "This story is about family relationships."
+    },
+    {
+      "id": "coming_of_age",
+      "label_fr": "passage à l'âge adulte",
+      "hypothesis": "This story is about growing up and coming of age."
+    },
+    {
+      "id": "identity",
+      "label_fr": "identité",
+      "hypothesis": "This story is about identity and finding oneself."
+    },
+    {
+      "id": "power_politics",
+      "label_fr": "pouvoir et politique",
+      "hypothesis": "This story is about power and politics."
+    },
+    {
+      "id": "war",
+      "label_fr": "guerre",
+      "hypothesis": "This story is about war."
+    },
+    {
+      "id": "survival",
+      "label_fr": "survie",
+      "hypothesis": "This story is about survival."
+    },
+    {
+      "id": "revenge",
+      "label_fr": "vengeance",
+      "hypothesis": "This story is about revenge."
+    },
+    {
+      "id": "betrayal",
+      "label_fr": "trahison",
+      "hypothesis": "This story is about betrayal."
+    },
+    {
+      "id": "crime_justice",
+      "label_fr": "crime et justice",
+      "hypothesis": "This story is about crime and justice."
+    },
+    {
+      "id": "grief_loss",
+      "label_fr": "deuil et perte",
+      "hypothesis": "This story is about grief and loss."
+    },
+    {
+      "id": "redemption",
+      "label_fr": "rédemption",
+      "hypothesis": "This story is about redemption."
+    },
+    {
+      "id": "freedom_oppression",
+      "label_fr": "liberté et oppression",
+      "hypothesis": "This story is about freedom and oppression."
+    },
+    {
+      "id": "quest_journey",
+      "label_fr": "quête et voyage",
+      "hypothesis": "This story is about a quest or a journey."
+    },
+    {
+      "id": "social_inequality",
+      "label_fr": "inégalités sociales",
+      "hypothesis": "This story is about social inequality and class."
+    }
   ],
-
   "atmospheres": [
-    {"id": "dark", "label_fr": "sombre", "hypothesis": "The atmosphere of this book is dark."},
-    {"id": "uplifting", "label_fr": "lumineuse / feel-good", "hypothesis": "This book is uplifting and heartwarming."},
-    {"id": "melancholic", "label_fr": "mélancolique", "hypothesis": "The atmosphere of this book is melancholic."},
-    {"id": "tense", "label_fr": "angoissante", "hypothesis": "This book is tense and full of suspense."},
-    {"id": "mysterious", "label_fr": "mystérieuse", "hypothesis": "The atmosphere of this book is mysterious."},
-    {"id": "romantic", "label_fr": "romantique", "hypothesis": "The atmosphere of this book is romantic."},
-    {"id": "lighthearted", "label_fr": "légère / drôle", "hypothesis": "This book is lighthearted and funny."},
-    {"id": "epic", "label_fr": "épique", "hypothesis": "This book is epic in scope."},
-    {"id": "dreamlike", "label_fr": "onirique / féerique", "hypothesis": "The atmosphere of this book is dreamlike and magical."},
-    {"id": "nostalgic", "label_fr": "nostalgique", "hypothesis": "The atmosphere of this book is nostalgic."}
+    {
+      "id": "dark",
+      "label_fr": "sombre",
+      "hypothesis": "The atmosphere of this book is dark."
+    },
+    {
+      "id": "uplifting",
+      "label_fr": "lumineuse / feel-good",
+      "hypothesis": "This book is uplifting and heartwarming."
+    },
+    {
+      "id": "melancholic",
+      "label_fr": "mélancolique",
+      "hypothesis": "The atmosphere of this book is melancholic."
+    },
+    {
+      "id": "tense",
+      "label_fr": "angoissante",
+      "hypothesis": "This book is tense and full of suspense."
+    },
+    {
+      "id": "mysterious",
+      "label_fr": "mystérieuse",
+      "hypothesis": "The atmosphere of this book is mysterious."
+    },
+    {
+      "id": "romantic",
+      "label_fr": "romantique",
+      "hypothesis": "The atmosphere of this book is romantic."
+    },
+    {
+      "id": "lighthearted",
+      "label_fr": "légère / drôle",
+      "hypothesis": "This book is lighthearted and funny."
+    },
+    {
+      "id": "epic",
+      "label_fr": "épique",
+      "hypothesis": "This book is epic in scope."
+    },
+    {
+      "id": "dreamlike",
+      "label_fr": "onirique / féerique",
+      "hypothesis": "The atmosphere of this book is dreamlike and magical."
+    },
+    {
+      "id": "nostalgic",
+      "label_fr": "nostalgique",
+      "hypothesis": "The atmosphere of this book is nostalgic."
+    }
   ],
-
   "narrative_styles": [
-    {"id": "first_person", "label_fr": "récit à la 1re personne", "hypothesis": "This book is narrated in the first person."},
-    {"id": "multiple_voices", "label_fr": "récit à plusieurs voix", "hypothesis": "This book is told from multiple points of view."},
-    {"id": "introspective", "label_fr": "introspectif / psychologique", "hypothesis": "This book is introspective and psychological."},
-    {"id": "fast_paced", "label_fr": "rythmé / plein d'action", "hypothesis": "This book is fast-paced and full of action."},
-    {"id": "lyrical", "label_fr": "poétique / lyrique", "hypothesis": "This book is written in a poetic, lyrical style."},
-    {"id": "immersive", "label_fr": "descriptif / immersif", "hypothesis": "This book has rich, immersive descriptions."},
-    {"id": "epistolary", "label_fr": "journal intime / lettres", "hypothesis": "This book is written as letters or a diary."}
+    {
+      "id": "first_person",
+      "label_fr": "récit à la 1re personne",
+      "hypothesis": "This book is narrated in the first person."
+    },
+    {
+      "id": "multiple_voices",
+      "label_fr": "récit à plusieurs voix",
+      "hypothesis": "This book is told from multiple points of view."
+    },
+    {
+      "id": "introspective",
+      "label_fr": "introspectif / psychologique",
+      "hypothesis": "This book is introspective and psychological."
+    },
+    {
+      "id": "fast_paced",
+      "label_fr": "rythmé / plein d'action",
+      "hypothesis": "This book is fast-paced and full of action."
+    },
+    {
+      "id": "lyrical",
+      "label_fr": "poétique / lyrique",
+      "hypothesis": "This book is written in a poetic, lyrical style."
+    },
+    {
+      "id": "immersive",
+      "label_fr": "descriptif / immersif",
+      "hypothesis": "This book has rich, immersive descriptions."
+    },
+    {
+      "id": "epistolary",
+      "label_fr": "journal intime / lettres",
+      "hypothesis": "This book is written as letters or a diary."
+    }
   ],
-
   "periods": [
-    {"id": "any", "label_fr": "indifférent", "hypothesis": null},
-    {"id": "antiquity", "label_fr": "Antiquité / mythologie", "hypothesis": "This story takes place in ancient times."},
-    {"id": "middle_ages", "label_fr": "Moyen Âge", "hypothesis": "This story takes place in the Middle Ages."},
-    {"id": "early_modern", "label_fr": "XVIe-XVIIIe siècle", "hypothesis": "This story takes place between the 16th and 18th centuries."},
-    {"id": "19th_century", "label_fr": "XIXe siècle", "hypothesis": "This story takes place in the 19th century."},
-    {"id": "1900_1945", "label_fr": "1900-1945", "hypothesis": "This story takes place in the early 20th century or during the world wars."},
-    {"id": "1945_2000", "label_fr": "1945-2000", "hypothesis": "This story takes place in the second half of the 20th century."},
-    {"id": "contemporary", "label_fr": "époque contemporaine", "hypothesis": "This story takes place in the present day."},
-    {"id": "future", "label_fr": "futur", "hypothesis": "This story takes place in the future."},
-    {"id": "imaginary_world", "label_fr": "monde imaginaire", "hypothesis": "This story takes place in an imaginary world."}
+    {
+      "id": "any",
+      "label_fr": "indifférent",
+      "hypothesis": null
+    },
+    {
+      "id": "antiquity",
+      "label_fr": "Antiquité / mythologie",
+      "hypothesis": "This story takes place in ancient times."
+    },
+    {
+      "id": "middle_ages",
+      "label_fr": "Moyen Âge",
+      "hypothesis": "This story takes place in the Middle Ages."
+    },
+    {
+      "id": "early_modern",
+      "label_fr": "XVIe-XVIIIe siècle",
+      "hypothesis": "This story takes place between the 16th and 18th centuries."
+    },
+    {
+      "id": "19th_century",
+      "label_fr": "XIXe siècle",
+      "hypothesis": "This story takes place in the 19th century."
+    },
+    {
+      "id": "1900_1945",
+      "label_fr": "1900-1945",
+      "hypothesis": "This story takes place in the early 20th century or during the world wars."
+    },
+    {
+      "id": "1945_2000",
+      "label_fr": "1945-2000",
+      "hypothesis": "This story takes place in the second half of the 20th century."
+    },
+    {
+      "id": "contemporary",
+      "label_fr": "époque contemporaine",
+      "hypothesis": "This story takes place in the present day."
+    },
+    {
+      "id": "future",
+      "label_fr": "futur",
+      "hypothesis": "This story takes place in the future."
+    },
+    {
+      "id": "imaginary_world",
+      "label_fr": "monde imaginaire",
+      "hypothesis": "This story takes place in an imaginary world."
+    }
   ],
-
   "avoid_quick_options": [
-    {"id": "graphic_violence", "label_fr": "violence explicite", "text": "graphic violence"},
-    {"id": "explicit_sex", "label_fr": "scènes sexuelles explicites", "text": "explicit sex scenes"},
-    {"id": "gore", "label_fr": "gore", "text": "gore and gruesome horror"},
-    {"id": "sad_ending", "label_fr": "fin triste", "text": "a sad, tragic ending"},
-    {"id": "romance_focus", "label_fr": "romance au premier plan", "text": "a story centered on romance"},
-    {"id": "love_triangle", "label_fr": "triangle amoureux", "text": "a love triangle"},
-    {"id": "abuse", "label_fr": "maltraitance / abus", "text": "abuse and mistreatment"},
-    {"id": "suicide", "label_fr": "suicide", "text": "suicide"}
+    {
+      "id": "graphic_violence",
+      "label_fr": "violence explicite",
+      "text": "graphic violence"
+    },
+    {
+      "id": "explicit_sex",
+      "label_fr": "scènes sexuelles explicites",
+      "text": "explicit sex scenes"
+    },
+    {
+      "id": "gore",
+      "label_fr": "gore",
+      "text": "gore and gruesome horror"
+    },
+    {
+      "id": "sad_ending",
+      "label_fr": "fin triste",
+      "text": "a sad, tragic ending"
+    },
+    {
+      "id": "romance_focus",
+      "label_fr": "romance au premier plan",
+      "text": "a story centered on romance"
+    },
+    {
+      "id": "love_triangle",
+      "label_fr": "triangle amoureux",
+      "text": "a love triangle"
+    },
+    {
+      "id": "abuse",
+      "label_fr": "maltraitance / abus",
+      "text": "abuse and mistreatment"
+    },
+    {
+      "id": "suicide",
+      "label_fr": "suicide",
+      "text": "suicide"
+    }
   ],
-
   "metadata_filters": [
-    {"id": "no_series", "label_fr": "pas de série", "rule": "exclude books whose `series` column is filled"}
+    {
+      "id": "no_series",
+      "label_fr": "pas de série",
+      "rule": "exclude books whose `series` column is filled"
+    }
   ],
-
   "length_categories": [
-    {"id": "any", "label_fr": "indifférent", "min_pages": null, "max_pages": null},
-    {"id": "short", "label_fr": "court (< 200 p.)", "min_pages": null, "max_pages": 199},
-    {"id": "medium", "label_fr": "moyen (200-400 p.)", "min_pages": 200, "max_pages": 400},
-    {"id": "long", "label_fr": "long (> 400 p.)", "min_pages": 401, "max_pages": null}
+    {
+      "id": "any",
+      "label_fr": "indifférent",
+      "min_pages": null,
+      "max_pages": null
+    },
+    {
+      "id": "short",
+      "label_fr": "court (< 200 p.)",
+      "min_pages": null,
+      "max_pages": 199
+    },
+    {
+      "id": "medium",
+      "label_fr": "moyen (200-400 p.)",
+      "min_pages": 200,
+      "max_pages": 400
+    },
+    {
+      "id": "long",
+      "label_fr": "long (> 400 p.)",
+      "min_pages": 401,
+      "max_pages": null
+    }
   ],
-
   "age_rules": {
     "book_min_age": [
-      {"goodreads_tags": ["Childrens", "Middle Grade", "Juvenile"], "min_age": 0},
-      {"goodreads_tags": ["Young Adult", "Teen"], "min_age": 13}
+      {
+        "goodreads_tags": [
+          "Childrens",
+          "Middle Grade",
+          "Juvenile"
+        ],
+        "min_age": 0
+      },
+      {
+        "goodreads_tags": [
+          "Young Adult",
+          "Teen"
+        ],
+        "min_age": 13
+      }
     ],
     "default_min_age": 18,
     "multiple_tags": "keep the lowest min_age",
     "reader": "a book is eligible if reader_age >= book_min_age (< 13 → children's only; 13-17 → YA + children's; >= 18 → all)"
   },
-
   "catalog_exclusions": [
-    {"reason": "graphic novels / comics", "goodreads_tags": ["Graphic Novels", "Comics", "Graphic Novels Comics", "Manga"], "within_first_tags": 3},
-    {"reason": "poetry", "goodreads_tags": ["Poetry"], "within_first_tags": 3},
-    {"reason": "erotica", "goodreads_tags": ["Erotica", "Erotic Romance", "BDSM"], "within_first_tags": null}
-  ]
+    {
+      "reason": "graphic novels / comics",
+      "goodreads_tags": [
+        "Graphic Novels",
+        "Comics",
+        "Graphic Novels Comics",
+        "Manga"
+      ],
+      "within_first_tags": 3
+    },
+    {
+      "reason": "poetry",
+      "goodreads_tags": [
+        "Poetry"
+      ],
+      "within_first_tags": 3
+    },
+    {
+      "reason": "erotica",
+      "goodreads_tags": [
+        "Erotica",
+        "Erotic Romance",
+        "BDSM"
+      ],
+      "within_first_tags": null
+    }
+  ],
+  "catalog_filters": {
+    "languages": {
+      "English": "en",
+      "French": "fr"
+    },
+    "fiction_tags": [
+      "Fiction",
+      "Novels",
+      "Literary Fiction",
+      "Historical Fiction",
+      "Science Fiction",
+      "Fantasy",
+      "Romance",
+      "Mystery",
+      "Thriller",
+      "Horror",
+      "Dystopia",
+      "Paranormal",
+      "Urban Fantasy",
+      "Chick Lit",
+      "Contemporary Romance",
+      "Short Stories",
+      "Young Adult Fantasy"
+    ],
+    "nonfiction_tags": [
+      "Nonfiction"
+    ],
+    "min_description_words": 30
+  }
 }

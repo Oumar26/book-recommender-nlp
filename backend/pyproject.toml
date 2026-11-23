@@ -26,10 +26,20 @@ nlp = [
     "umap-learn>=0.5",
 ]
 
+[project.scripts]
+book-recommender = "book_recommender.main.cli:main"
+
 [dependency-groups]
 dev = [
     "pytest>=8.3",
     "ruff>=0.7",
+]
+
+notebooks = [
+    "ipykernel>=6.29",
+    "nbclient>=0.10",
+    "nbformat>=5.10",
+    "matplotlib>=3.9",
 ]
 
 [build-system]
@@ -60,3 +70,6 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+"notebooks/*" = ["E501", "E702"]
