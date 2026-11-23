@@ -1,0 +1,644 @@
+{
+  "points": [
+    {
+      "book_id": "2767052-the-hunger-games",
+      "title": "The Hunger Games",
+      "x": -2.908,
+      "y": -6.318,
+      "genre": "science_fiction",
+      "cluster": 1
+    },
+    {
+      "book_id": "2.Harry_Potter_and_the_Order_of_the_Phoenix",
+      "title": "Harry Potter and the Order of the Phoenix",
+      "x": 1.825,
+      "y": -6.962,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "2657.To_Kill_a_Mockingbird",
+      "title": "To Kill a Mockingbird",
+      "x": 3.534,
+      "y": 0.406,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "1885.Pride_and_Prejudice",
+      "title": "Pride and Prejudice",
+      "x": 2.888,
+      "y": 1.042,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "41865.Twilight",
+      "title": "Twilight",
+      "x": 3.248,
+      "y": -9.047,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "19063.The_Book_Thief",
+      "title": "The Book Thief",
+      "x": -3.763,
+      "y": -1.883,
+      "genre": "historical",
+      "cluster": 5
+    },
+    {
+      "book_id": "170448.Animal_Farm",
+      "title": "Animal Farm",
+      "x": -1.008,
+      "y": -0.07,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "11127.The_Chronicles_of_Narnia",
+      "title": "The Chronicles of Narnia",
+      "x": 1.04,
+      "y": -6.461,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "30.J_R_R_Tolkien_4_Book_Boxed_Set",
+      "title": "J.R.R. Tolkien 4-Book Boxed Set: The Hobbit and The Lord of the Rings",
+      "x": 3.094,
+      "y": -9.185,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "18405.Gone_with_the_Wind",
+      "title": "Gone with the Wind",
+      "x": 3.5,
+      "y": -0.584,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "11870085-the-fault-in-our-stars",
+      "title": "The Fault in Our Stars",
+      "x": 3.671,
+      "y": 2.445,
+      "genre": "romance",
+      "cluster": 2
+    },
+    {
+      "book_id": "386162.The_Hitchhiker_s_Guide_to_the_Galaxy",
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "x": -3.451,
+      "y": -3.364,
+      "genre": "science_fiction",
+      "cluster": 1
+    },
+    {
+      "book_id": "370493.The_Giving_Tree",
+      "title": "The Giving Tree",
+      "x": 3.228,
+      "y": 1.174,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "6185.Wuthering_Heights",
+      "title": "Wuthering Heights",
+      "x": 3.243,
+      "y": 1.341,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "968.The_Da_Vinci_Code",
+      "title": "The Da Vinci Code",
+      "x": 5.46,
+      "y": -7.542,
+      "genre": "crime_thriller",
+      "cluster": 3
+    },
+    {
+      "book_id": "929.Memoirs_of_a_Geisha",
+      "title": "Memoirs of a Geisha",
+      "x": -5.113,
+      "y": 0.735,
+      "genre": "historical",
+      "cluster": 5
+    },
+    {
+      "book_id": "5297.The_Picture_of_Dorian_Gray",
+      "title": "The Picture of Dorian Gray",
+      "x": 2.073,
+      "y": 3.756,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "24213.Alice_s_Adventures_in_Wonderland_Through_the_Looking_Glass",
+      "title": "Alice's Adventures in Wonderland & Through the Looking-Glass",
+      "x": 1.333,
+      "y": -0.709,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "10210.Jane_Eyre",
+      "title": "Jane Eyre",
+      "x": 3.397,
+      "y": 2.567,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "24280.Les_Mis_rables",
+      "title": "Les Misérables",
+      "x": 3.056,
+      "y": 1.806,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "13079982-fahrenheit-451",
+      "title": "Fahrenheit 451",
+      "x": 4.252,
+      "y": 0.597,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "13335037-divergent",
+      "title": "Divergent",
+      "x": -5.449,
+      "y": -5.12,
+      "genre": "science_fiction",
+      "cluster": 1
+    },
+    {
+      "book_id": "7624.Lord_of_the_Flies",
+      "title": "Lord of the Flies",
+      "x": 3.637,
+      "y": -1.158,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "18135.Romeo_and_Juliet",
+      "title": "Romeo and Juliet",
+      "x": 2.442,
+      "y": 1.048,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "18144590-the-alchemist",
+      "title": "The Alchemist",
+      "x": 1.988,
+      "y": 1.66,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "7144.Crime_and_Punishment",
+      "title": "Crime and Punishment",
+      "x": 3.153,
+      "y": 3.737,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "22628.The_Perks_of_Being_a_Wallflower",
+      "title": "The Perks of Being a Wallflower",
+      "x": -6.769,
+      "y": -5.611,
+      "genre": "contemporary_literature",
+      "cluster": 6
+    },
+    {
+      "book_id": "4671.The_Great_Gatsby",
+      "title": "The Great Gatsby",
+      "x": 1.668,
+      "y": -0.362,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "256683.City_of_Bones",
+      "title": "City of Bones",
+      "x": 3.469,
+      "y": -8.337,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "375802.Ender_s_Game",
+      "title": "Ender's Game",
+      "x": -3.691,
+      "y": -3.455,
+      "genre": "science_fiction",
+      "cluster": 1
+    },
+    {
+      "book_id": "4667024-the-help",
+      "title": "The Help",
+      "x": -5.442,
+      "y": -0.296,
+      "genre": "historical",
+      "cluster": 5
+    },
+    {
+      "book_id": "8127.Anne_of_Green_Gables",
+      "title": "Anne of Green Gables",
+      "x": 0.004,
+      "y": -0.688,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "3.Harry_Potter_and_the_Sorcerer_s_Stone",
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "x": 1.493,
+      "y": -7.059,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "157993.The_Little_Prince",
+      "title": "The Little Prince",
+      "x": 3.95,
+      "y": 0.695,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "24178.Charlotte_s_Web",
+      "title": "Charlotte's Web",
+      "x": 2.738,
+      "y": 0.937,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "890.Of_Mice_and_Men",
+      "title": "Of Mice and Men",
+      "x": 3.808,
+      "y": 1.88,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "18619684-the-time-traveler-s-wife",
+      "title": "The Time Traveler's Wife",
+      "x": 4.139,
+      "y": 1.513,
+      "genre": "romance",
+      "cluster": 2
+    },
+    {
+      "book_id": "17245.Dracula",
+      "title": "Dracula",
+      "x": 3.573,
+      "y": 1.214,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "5129.Brave_New_World",
+      "title": "Brave New World",
+      "x": 3.993,
+      "y": 0.68,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "320.One_Hundred_Years_of_Solitude",
+      "title": "One Hundred Years of Solitude",
+      "x": 4.937,
+      "y": 0.253,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "5107.The_Catcher_in_the_Rye",
+      "title": "The Catcher in the Rye",
+      "x": 4.469,
+      "y": 0.869,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "21787.The_Princess_Bride",
+      "title": "The Princess Bride",
+      "x": 1.56,
+      "y": -9.067,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "28187.The_Lightning_Thief",
+      "title": "The Lightning Thief",
+      "x": 2.034,
+      "y": -5.75,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "2998.The_Secret_Garden",
+      "title": "The Secret Garden",
+      "x": 3.459,
+      "y": 1.615,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "128029.A_Thousand_Splendid_Suns",
+      "title": "A Thousand Splendid Suns",
+      "x": -7.59,
+      "y": 1.01,
+      "genre": "historical",
+      "cluster": 5
+    },
+    {
+      "book_id": "33574273-a-wrinkle-in-time",
+      "title": "A Wrinkle in Time",
+      "x": 2.953,
+      "y": -8.315,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "13496.A_Game_of_Thrones",
+      "title": "A Game of Thrones",
+      "x": 1.415,
+      "y": -7.603,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "2956.The_Adventures_of_Huckleberry_Finn",
+      "title": "The Adventures of Huckleberry Finn",
+      "x": 4.64,
+      "y": -0.653,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "12232938-the-lovely-bones",
+      "title": "The Lovely Bones",
+      "x": 5.719,
+      "y": -4.839,
+      "genre": "crime_thriller",
+      "cluster": 3
+    },
+    {
+      "book_id": "231804.The_Outsiders",
+      "title": "The Outsiders",
+      "x": 1.818,
+      "y": 0.246,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "19543.Where_the_Wild_Things_Are",
+      "title": "Where the Wild Things Are",
+      "x": 2.525,
+      "y": -0.895,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "23772.Green_Eggs_and_Ham",
+      "title": "Green Eggs and Ham",
+      "x": 2.684,
+      "y": -0.853,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "1381.The_Odyssey",
+      "title": "The Odyssey",
+      "x": 3.549,
+      "y": 0.723,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "4214.Life_of_Pi",
+      "title": "Life of Pi",
+      "x": 5.199,
+      "y": -7.235,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "1953.A_Tale_of_Two_Cities",
+      "title": "A Tale of Two Cities",
+      "x": 4.174,
+      "y": -0.975,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "43641.Water_for_Elephants",
+      "title": "Water for Elephants",
+      "x": -4.661,
+      "y": 0.506,
+      "genre": "historical",
+      "cluster": 5
+    },
+    {
+      "book_id": "7604.Lolita",
+      "title": "Lolita",
+      "x": 4.668,
+      "y": -1.466,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "4981.Slaughterhouse_Five",
+      "title": "Slaughterhouse-Five",
+      "x": 3.686,
+      "y": 1.488,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "35031085-frankenstein",
+      "title": "Frankenstein: The 1818 Text",
+      "x": 4.392,
+      "y": 1.645,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "77203.The_Kite_Runner",
+      "title": "The Kite Runner",
+      "x": -4.434,
+      "y": -0.592,
+      "genre": "historical",
+      "cluster": 5
+    },
+    {
+      "book_id": "38447.The_Handmaid_s_Tale",
+      "title": "The Handmaid's Tale",
+      "x": 0.776,
+      "y": 0.973,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "3636.The_Giver",
+      "title": "The Giver",
+      "x": 2.149,
+      "y": 3.345,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "168668.Catch_22",
+      "title": "Catch-22",
+      "x": 1.604,
+      "y": 1.136,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "44767458-dune",
+      "title": "Dune",
+      "x": -5.639,
+      "y": -4.943,
+      "genre": "science_fiction",
+      "cluster": 1
+    },
+    {
+      "book_id": "5043.The_Pillars_of_the_Earth",
+      "title": "The Pillars of the Earth",
+      "x": -4.162,
+      "y": 1.157,
+      "genre": "historical",
+      "cluster": 5
+    },
+    {
+      "book_id": "149267.The_Stand",
+      "title": "The Stand",
+      "x": 0.633,
+      "y": -7.581,
+      "genre": "horror",
+      "cluster": 4
+    },
+    {
+      "book_id": "3590.The_Adventures_of_Sherlock_Holmes",
+      "title": "The Adventures of Sherlock Holmes",
+      "x": 0.946,
+      "y": 1.314,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "76620.Watership_Down",
+      "title": "Watership Down",
+      "x": 3.07,
+      "y": 1.358,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "2623.Great_Expectations",
+      "title": "Great Expectations",
+      "x": 1.488,
+      "y": 2.192,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "1934.Little_Women",
+      "title": "Little Women",
+      "x": 2.512,
+      "y": 1.629,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "6514.The_Bell_Jar",
+      "title": "The Bell Jar",
+      "x": 4.054,
+      "y": 1.511,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "136251.Harry_Potter_and_the_Deathly_Hallows",
+      "title": "Harry Potter and the Deathly Hallows",
+      "x": 2.603,
+      "y": -4.801,
+      "genre": "fantasy",
+      "cluster": 0
+    },
+    {
+      "book_id": "332613.One_Flew_Over_the_Cuckoo_s_Nest",
+      "title": "One Flew Over the Cuckoo's Nest",
+      "x": 2.715,
+      "y": 0.334,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "15823480-anna-karenina",
+      "title": "Anna Karenina",
+      "x": 2.544,
+      "y": 2.647,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "10964.Outlander",
+      "title": "Outlander",
+      "x": -4.347,
+      "y": 0.761,
+      "genre": "historical",
+      "cluster": 5
+    },
+    {
+      "book_id": "10917.My_Sister_s_Keeper",
+      "title": "My Sister's Keeper",
+      "x": -6.021,
+      "y": -5.485,
+      "genre": "contemporary_literature",
+      "cluster": 6
+    },
+    {
+      "book_id": "39988.Matilda",
+      "title": "Matilda",
+      "x": 0.154,
+      "y": 1.108,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "3263607-the-fellowship-of-the-ring",
+      "title": "The Fellowship of the Ring",
+      "x": 2.697,
+      "y": -0.071,
+      "genre": "classics",
+      "cluster": 7
+    },
+    {
+      "book_id": "2429135.The_Girl_with_the_Dragon_Tattoo",
+      "title": "The Girl with the Dragon Tattoo",
+      "x": 7.407,
+      "y": -5.819,
+      "genre": "crime_thriller",
+      "cluster": 3
+    },
+    {
+      "book_id": "17899948-rebecca",
+      "title": "Rebecca",
+      "x": 1.105,
+      "y": 1.393,
+      "genre": "classics",
+      "cluster": 7
+    }
+  ]
+}

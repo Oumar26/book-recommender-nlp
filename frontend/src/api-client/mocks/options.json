@@ -1,0 +1,277 @@
+{
+  "genres": [
+    {
+      "id": "fantasy",
+      "label": "Fantasy"
+    },
+    {
+      "id": "science_fiction",
+      "label": "Science-fiction"
+    },
+    {
+      "id": "romance",
+      "label": "Romance"
+    },
+    {
+      "id": "crime_thriller",
+      "label": "Policier / thriller"
+    },
+    {
+      "id": "horror",
+      "label": "Horreur"
+    },
+    {
+      "id": "historical",
+      "label": "Historique"
+    },
+    {
+      "id": "contemporary_literature",
+      "label": "Littérature contemporaine"
+    },
+    {
+      "id": "classics",
+      "label": "Classiques"
+    },
+    {
+      "id": "adventure",
+      "label": "Aventure"
+    },
+    {
+      "id": "humor",
+      "label": "Humour"
+    }
+  ],
+  "themes": [
+    {
+      "id": "love",
+      "label": "amour"
+    },
+    {
+      "id": "friendship",
+      "label": "amitié"
+    },
+    {
+      "id": "family",
+      "label": "famille"
+    },
+    {
+      "id": "coming_of_age",
+      "label": "passage à l'âge adulte"
+    },
+    {
+      "id": "identity",
+      "label": "identité"
+    },
+    {
+      "id": "power_politics",
+      "label": "pouvoir et politique"
+    },
+    {
+      "id": "war",
+      "label": "guerre"
+    },
+    {
+      "id": "survival",
+      "label": "survie"
+    },
+    {
+      "id": "revenge",
+      "label": "vengeance"
+    },
+    {
+      "id": "betrayal",
+      "label": "trahison"
+    },
+    {
+      "id": "crime_justice",
+      "label": "crime et justice"
+    },
+    {
+      "id": "grief_loss",
+      "label": "deuil et perte"
+    },
+    {
+      "id": "redemption",
+      "label": "rédemption"
+    },
+    {
+      "id": "freedom_oppression",
+      "label": "liberté et oppression"
+    },
+    {
+      "id": "quest_journey",
+      "label": "quête et voyage"
+    },
+    {
+      "id": "social_inequality",
+      "label": "inégalités sociales"
+    }
+  ],
+  "atmospheres": [
+    {
+      "id": "dark",
+      "label": "sombre"
+    },
+    {
+      "id": "uplifting",
+      "label": "lumineuse / feel-good"
+    },
+    {
+      "id": "melancholic",
+      "label": "mélancolique"
+    },
+    {
+      "id": "tense",
+      "label": "angoissante"
+    },
+    {
+      "id": "mysterious",
+      "label": "mystérieuse"
+    },
+    {
+      "id": "romantic",
+      "label": "romantique"
+    },
+    {
+      "id": "lighthearted",
+      "label": "légère / drôle"
+    },
+    {
+      "id": "epic",
+      "label": "épique"
+    },
+    {
+      "id": "dreamlike",
+      "label": "onirique / féerique"
+    },
+    {
+      "id": "nostalgic",
+      "label": "nostalgique"
+    }
+  ],
+  "narrative_styles": [
+    {
+      "id": "first_person",
+      "label": "récit à la 1re personne"
+    },
+    {
+      "id": "multiple_voices",
+      "label": "récit à plusieurs voix"
+    },
+    {
+      "id": "introspective",
+      "label": "introspectif / psychologique"
+    },
+    {
+      "id": "fast_paced",
+      "label": "rythmé / plein d'action"
+    },
+    {
+      "id": "lyrical",
+      "label": "poétique / lyrique"
+    },
+    {
+      "id": "immersive",
+      "label": "descriptif / immersif"
+    },
+    {
+      "id": "epistolary",
+      "label": "journal intime / lettres"
+    }
+  ],
+  "periods": [
+    {
+      "id": "any",
+      "label": "indifférent"
+    },
+    {
+      "id": "antiquity",
+      "label": "Antiquité / mythologie"
+    },
+    {
+      "id": "middle_ages",
+      "label": "Moyen Âge"
+    },
+    {
+      "id": "early_modern",
+      "label": "XVIe-XVIIIe siècle"
+    },
+    {
+      "id": "19th_century",
+      "label": "XIXe siècle"
+    },
+    {
+      "id": "1900_1945",
+      "label": "1900-1945"
+    },
+    {
+      "id": "1945_2000",
+      "label": "1945-2000"
+    },
+    {
+      "id": "contemporary",
+      "label": "époque contemporaine"
+    },
+    {
+      "id": "future",
+      "label": "futur"
+    },
+    {
+      "id": "imaginary_world",
+      "label": "monde imaginaire"
+    }
+  ],
+  "avoid_quick_options": [
+    {
+      "id": "graphic_violence",
+      "label": "violence explicite"
+    },
+    {
+      "id": "explicit_sex",
+      "label": "scènes sexuelles explicites"
+    },
+    {
+      "id": "gore",
+      "label": "gore"
+    },
+    {
+      "id": "sad_ending",
+      "label": "fin triste"
+    },
+    {
+      "id": "romance_focus",
+      "label": "romance au premier plan"
+    },
+    {
+      "id": "love_triangle",
+      "label": "triangle amoureux"
+    },
+    {
+      "id": "abuse",
+      "label": "maltraitance / abus"
+    },
+    {
+      "id": "suicide",
+      "label": "suicide"
+    }
+  ],
+  "length_categories": [
+    {
+      "id": "any",
+      "label": "indifférent"
+    },
+    {
+      "id": "short",
+      "label": "court (< 200 p.)"
+    },
+    {
+      "id": "medium",
+      "label": "moyen (200-400 p.)"
+    },
+    {
+      "id": "long",
+      "label": "long (> 400 p.)"
+    }
+  ],
+  "description_min_words": 20
+}

@@ -11,7 +11,7 @@ Mettre à jour la colonne **Statut** (et **Responsable**) à chaque changement ;
 
 | Phase | Tâches | Terminées | Estimation | Statut |
 | --- | --- | --- | --- | --- |
-| 0. Cadrage | 8 | 4 | ½ j | 🔄 |
+| 0. Cadrage | 8 | 6 | ½ j | 🔄 |
 | 1. Données | 14 | 0 | 1 à 2 j | ⬜ |
 | 2. Moteur | 12 | 0 | 2 j | ⬜ |
 | 3. Scoring | 16 | 0 | 1 à 2 j | ⬜ |
@@ -29,8 +29,8 @@ Mettre à jour la colonne **Statut** (et **Responsable**) à chaque changement ;
 | P0-03 | Squelette Clean Architecture + test de dépendances | P2 | 0,1 j | | ✅ | 2026-11-23 |
 | P0-04 | Initialiser le front-end React + Vite | P2 | 0,05 j | | ⬜ | |
 | P0-05 | Figer le questionnaire (listes fermées, seuils) | P1 | 0,1 j | | ✅ | 2026-11-23 · backend/data/options.json |
-| P0-06 | Contrat API (schémas Pydantic) + brouillon api.md | P1 | 0,1 j | | ⬜ | |
-| P0-07 | Données fictives pour le front | P2 | 0,05 j | | ⬜ | |
+| P0-06 | Contrat API (schémas Pydantic) + brouillon api.md | P1 | 0,1 j | | ✅ | 2026-11-23 |
+| P0-07 | Données fictives pour le front | P2 | 0,05 j | | ✅ | 2026-11-23 |
 | P0-08 | Rôles et conventions | P2 | 0,02 j | | ⬜ | |
 
 ## Phase 1 – Données

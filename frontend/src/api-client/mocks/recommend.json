@@ -1,0 +1,385 @@
+{
+  "recommendations": [
+    {
+      "rank": 1,
+      "book": {
+        "id": "10210.Jane_Eyre",
+        "title": "Jane Eyre",
+        "author": "Charlotte Brontë",
+        "cover_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1557343311l/10210._SY475_.jpg",
+        "pages": 532,
+        "year": 1847,
+        "genres": [
+          "classics",
+          "romance",
+          "historical"
+        ]
+      },
+      "score": 0.7075,
+      "criteria": [
+        {
+          "criterion": "description",
+          "similarity": 0.78,
+          "weight": 0.3,
+          "contribution": 0.234,
+          "matched_terms": []
+        },
+        {
+          "criterion": "themes",
+          "similarity": 0.81,
+          "weight": 0.15,
+          "contribution": 0.1215,
+          "matched_terms": [
+            "identité",
+            "amour"
+          ]
+        },
+        {
+          "criterion": "atmosphere",
+          "similarity": 0.74,
+          "weight": 0.1,
+          "contribution": 0.074,
+          "matched_terms": [
+            "mystérieuse",
+            "mélancolique"
+          ]
+        },
+        {
+          "criterion": "style",
+          "similarity": 0.55,
+          "weight": 0.05,
+          "contribution": 0.0275,
+          "matched_terms": [
+            "récit à la 1re personne"
+          ]
+        },
+        {
+          "criterion": "genre",
+          "similarity": 1.0,
+          "weight": 0.1,
+          "contribution": 0.1,
+          "matched_terms": [
+            "Classiques"
+          ]
+        },
+        {
+          "criterion": "complexity",
+          "similarity": 1.0,
+          "weight": 0.05,
+          "contribution": 0.05,
+          "matched_terms": []
+        },
+        {
+          "criterion": "liked_book",
+          "similarity": 0.83,
+          "weight": 0.15,
+          "contribution": 0.1245,
+          "matched_terms": []
+        },
+        {
+          "criterion": "avoid",
+          "similarity": 0.12,
+          "weight": 0.2,
+          "contribution": -0.024,
+          "matched_terms": []
+        }
+      ],
+      "soft_filters": [
+        {
+          "filter": "length",
+          "matched": true,
+          "factor": 1.0
+        },
+        {
+          "filter": "period",
+          "matched": true,
+          "factor": 1.0
+        }
+      ],
+      "shared_keywords": [
+        "governess",
+        "thornfield",
+        "secret",
+        "independence"
+      ],
+      "explanation": "Recommandé car très proche du livre que vous avez aimé (0,83) et de vos thèmes (identité, amour, 0,81), avec l'atmosphère mystérieuse et mélancolique recherchée."
+    },
+    {
+      "rank": 2,
+      "book": {
+        "id": "4671.The_Great_Gatsby",
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "cover_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1490528560l/4671._SY475_.jpg",
+        "pages": 200,
+        "year": 1925,
+        "genres": [
+          "classics",
+          "contemporary_literature"
+        ]
+      },
+      "score": 0.5391,
+      "criteria": [
+        {
+          "criterion": "description",
+          "similarity": 0.61,
+          "weight": 0.3,
+          "contribution": 0.183,
+          "matched_terms": []
+        },
+        {
+          "criterion": "themes",
+          "similarity": 0.63,
+          "weight": 0.15,
+          "contribution": 0.0945,
+          "matched_terms": [
+            "amour",
+            "inégalités sociales"
+          ]
+        },
+        {
+          "criterion": "atmosphere",
+          "similarity": 0.62,
+          "weight": 0.1,
+          "contribution": 0.062,
+          "matched_terms": [
+            "mélancolique",
+            "nostalgique"
+          ]
+        },
+        {
+          "criterion": "style",
+          "similarity": 0.6,
+          "weight": 0.05,
+          "contribution": 0.03,
+          "matched_terms": [
+            "récit à la 1re personne"
+          ]
+        },
+        {
+          "criterion": "genre",
+          "similarity": 1.0,
+          "weight": 0.1,
+          "contribution": 0.1,
+          "matched_terms": [
+            "Classiques"
+          ]
+        },
+        {
+          "criterion": "complexity",
+          "similarity": 0.75,
+          "weight": 0.05,
+          "contribution": 0.0375,
+          "matched_terms": []
+        },
+        {
+          "criterion": "liked_book",
+          "similarity": 0.68,
+          "weight": 0.15,
+          "contribution": 0.102,
+          "matched_terms": []
+        },
+        {
+          "criterion": "avoid",
+          "similarity": 0.05,
+          "weight": 0.2,
+          "contribution": -0.01,
+          "matched_terms": []
+        }
+      ],
+      "soft_filters": [
+        {
+          "filter": "length",
+          "matched": true,
+          "factor": 1.0
+        },
+        {
+          "filter": "period",
+          "matched": false,
+          "factor": 0.9
+        }
+      ],
+      "shared_keywords": [
+        "obsession",
+        "wealth",
+        "longing"
+      ],
+      "explanation": "Recommandé car proche de vos thèmes (amour, inégalités sociales, 0,63) et de votre style préféré (récit à la 1re personne), dans une atmosphère mélancolique."
+    },
+    {
+      "rank": 3,
+      "book": {
+        "id": "11588.The_Shining",
+        "title": "The Shining",
+        "author": "Stephen King",
+        "cover_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353277730l/11588.jpg",
+        "pages": 659,
+        "year": 1977,
+        "genres": [
+          "horror",
+          "crime_thriller"
+        ]
+      },
+      "score": 0.5198,
+      "criteria": [
+        {
+          "criterion": "description",
+          "similarity": 0.66,
+          "weight": 0.3,
+          "contribution": 0.198,
+          "matched_terms": []
+        },
+        {
+          "criterion": "themes",
+          "similarity": 0.58,
+          "weight": 0.15,
+          "contribution": 0.087,
+          "matched_terms": [
+            "famille"
+          ]
+        },
+        {
+          "criterion": "atmosphere",
+          "similarity": 0.8,
+          "weight": 0.1,
+          "contribution": 0.08,
+          "matched_terms": [
+            "sombre",
+            "angoissante"
+          ]
+        },
+        {
+          "criterion": "style",
+          "similarity": 0.4,
+          "weight": 0.05,
+          "contribution": 0.02,
+          "matched_terms": []
+        },
+        {
+          "criterion": "genre",
+          "similarity": 1.0,
+          "weight": 0.1,
+          "contribution": 0.1,
+          "matched_terms": [
+            "Policier / thriller"
+          ]
+        },
+        {
+          "criterion": "complexity",
+          "similarity": 0.75,
+          "weight": 0.05,
+          "contribution": 0.0375,
+          "matched_terms": []
+        },
+        {
+          "criterion": "liked_book",
+          "similarity": 0.7,
+          "weight": 0.15,
+          "contribution": 0.105,
+          "matched_terms": []
+        },
+        {
+          "criterion": "avoid",
+          "similarity": 0.25,
+          "weight": 0.2,
+          "contribution": -0.05,
+          "matched_terms": []
+        }
+      ],
+      "soft_filters": [
+        {
+          "filter": "length",
+          "matched": true,
+          "factor": 1.0
+        },
+        {
+          "filter": "period",
+          "matched": false,
+          "factor": 0.9
+        }
+      ],
+      "shared_keywords": [
+        "hotel",
+        "isolation",
+        "madness"
+      ],
+      "explanation": "Recommandé pour son atmosphère sombre et angoissante (0,80) et sa proximité avec votre description (0,66). Légèrement pénalisé : il ne se déroule pas au XIXe siècle."
+    }
+  ],
+  "category_affinity": {
+    "criteria": [
+      {
+        "key": "description",
+        "label": "Description",
+        "value": 0.683
+      },
+      {
+        "key": "themes",
+        "label": "Thèmes",
+        "value": 0.673
+      },
+      {
+        "key": "atmosphere",
+        "label": "Atmosphère",
+        "value": 0.72
+      },
+      {
+        "key": "style",
+        "label": "Style",
+        "value": 0.517
+      },
+      {
+        "key": "genre",
+        "label": "Genre",
+        "value": 1.0
+      },
+      {
+        "key": "complexity",
+        "label": "Complexité",
+        "value": 0.833
+      },
+      {
+        "key": "liked_book",
+        "label": "Livre aimé",
+        "value": 0.737
+      }
+    ],
+    "genres": [
+      {
+        "key": "classics",
+        "label": "Classiques",
+        "value": 0.82
+      },
+      {
+        "key": "crime_thriller",
+        "label": "Policier / thriller",
+        "value": 0.71
+      },
+      {
+        "key": "romance",
+        "label": "Romance",
+        "value": 0.64
+      },
+      {
+        "key": "historical",
+        "label": "Historique",
+        "value": 0.58
+      },
+      {
+        "key": "horror",
+        "label": "Horreur",
+        "value": 0.55
+      },
+      {
+        "key": "fantasy",
+        "label": "Fantasy",
+        "value": 0.31
+      }
+    ]
+  },
+  "user_map_point": {
+    "x": 1.2,
+    "y": -0.8
+  },
+  "warning": null
+}

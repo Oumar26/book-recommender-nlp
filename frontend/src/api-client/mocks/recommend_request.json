@@ -1,0 +1,33 @@
+{
+  "description": "J'aime les romans gothiques et mystérieux, avec une héroïne forte qui découvre peu à peu les secrets d'une vieille maison isolée et doit choisir entre l'amour et sa liberté.",
+  "liked_book_id": "17899948-rebecca",
+  "genres": [
+    "classics",
+    "crime_thriller"
+  ],
+  "themes": [
+    "identity",
+    "love"
+  ],
+  "other_themes": "secrets de famille",
+  "atmospheres": [
+    "mysterious",
+    "melancholic",
+    "dark"
+  ],
+  "period": "19th_century",
+  "narrative_styles": [
+    "first_person"
+  ],
+  "complexity": 4,
+  "importance_themes": 4,
+  "importance_style": 2,
+  "importance_atmosphere": 5,
+  "avoid_text": "scènes gores",
+  "avoid_options": [
+    "gore"
+  ],
+  "age": 25,
+  "length": "any",
+  "no_series": true
+}
