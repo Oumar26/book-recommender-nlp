@@ -1,0 +1,25 @@
+# Données volumineuses ou générées (téléchargées / produites par le pipeline)
+backend/data/raw/*
+backend/data/processed/*
+backend/data/embeddings/*
+!backend/data/**/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Front-end
+node_modules/
+frontend/dist/
+
+# Environnement et éditeurs
+.env
+.env.*
+.vscode/
+.idea/
+.DS_Store
